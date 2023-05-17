@@ -52,7 +52,7 @@ async def create(
 
 @app.get("/get_user")
 async def users(id: int, db: Session = Depends(get_db)):
-    # finding an object with provinded id
+    # finding an object with id
     user_object = (
         db.query(Users, Profile)
         .join(Profile, Users.id == Profile.user_id)
